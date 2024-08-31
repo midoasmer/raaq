@@ -1,0 +1,56 @@
+<?php
+
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuestionController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::prefix('profile')->middleware('auth')->group(function (){
+    Route::get('/',[ProfileController::class, 'edit'])->name('profile');
+    Route::post('/update', [ProfileController::class, 'update'])->name('profile.update');
+});
+
+Route::prefix('page')->middleware('auth')->group(function (){
+    Route::get('/',[PageController::class, 'index'])->name('page.index');
+    Route::post('/add', [PageController::class, 'store'])->name('page.add');
+    Route::post('/update', [PageController::class, 'update'])->name('page.update');
+    Route::post('/delete', [PageController::class, 'destroy'])->name('page.delete');
+});
+Route::prefix('question')->middleware('auth')->group(function (){
+    Route::get('/',[QuestionController::class, 'index'])->name('question.index');
+    Route::post('/add', [QuestionController::class, 'store'])->name('question.add');
+    Route::post('/update', [QuestionController::class, 'update'])->name('question.update');
+    Route::post('/delete', [QuestionController::class, 'destroy'])->name('question.delete');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard');
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard/dash', function () {
+    return view('dashboard.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboardDash');
+
+
+//Route::middleware('auth')->group(function () {
+//    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+//});
+
+require __DIR__.'/auth.php';

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ar" id="demo" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="description" content="ٌراق اونلاين">
+    <meta name="author" content="راق اونلاين">
+    <meta name="keywords"
+          content="راق اونلاين">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{asset('/build/assets/img/brand/favicon.ico')}}" type="image/x-icon"/>
+
+    <!-- Title -->
+    <title>راق اونلاين</title>
+
+    <!-- Bootstrap css-->
+    <link id="style" href="{{asset('/build/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
+
+    <!-- Icons css-->
+    <link href="{{asset('/build/assets/plugins/web-fonts/icons.css')}}" rel="stylesheet"/>
+    <link href="{{asset('/build/assets/plugins/web-fonts/font-awesome/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/build/assets/plugins/web-fonts/plugin.css')}}" rel="stylesheet"/>
+
+    <!-- Style css-->
+    <link href="{{asset('/build/assets/css/style.css')}}" rel="stylesheet">
+
+    <!-- Select2 css-->
+    <link href="{{asset('build/assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
+
+    <!-- Mutipleselect css-->
+    <link rel="stylesheet" href="{{asset('/build/assets/plugins/multipleselect/multiple-select.css')}}">
+    @yield('style')
+
+</head>
+
+<body class="ltr main-body leftmenu">
+
+<!-- Loader -->
+<div id="global-loader">
+    <img src="{{asset('/build/assets/img/loader.svg')}}" class="loader-img" alt="Loader">
+</div>
+<!-- End Loader -->
+
+
+<!-- Page -->
+<div class="page">
+    <!-- Main Header-->
+    <div class="main-header side-header sticky">
+        <div class="main-container container-fluid">
+            <div class="main-header-left">
+                <a class="main-header-menu-icon" href="javascript:void(0)" id="mainSidebarToggle"><span></span></a>
+                <div class="hor-logo">
+                    <a class="main-logo" href="index.html">
+                        <img src="../assets/img/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                        <img src="../assets/img/brand/logo-light.png" class="header-brand-img desktop-logo-dark"
+                             alt="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="main-header-center">
+                <div class="responsive-logo">
+                    <a href="index.html"><img src="../assets/img/brand/logo.png" class="mobile-logo" alt="logo"></a>
+                    <a href="index.html"><img src="../assets/img/brand/logo-light.png" class="mobile-logo-dark"
+                                              alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-header-right">
+                <button class="navbar-toggler navresponsive-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fe fe-more-vertical header-icons navbar-toggler-icon"></i>
+                </button>
+                <!-- Navresponsive closed -->
+                <div
+                    class="navbar navbar-expand-lg  nav nav-item  navbar-nav-right responsive-navbar navbar-dark  ">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                        <div class="d-flex order-lg-2 ms-auto">
+                            <div class="dropdown d-flex main-header-theme">
+                                <a class="nav-link icon layout-setting">
+										<span class="dark-layout">
+											<i class="fe fe-sun header-icons"></i>
+										</span>
+                                    <span class="light-layout">
+											<i class="fe fe-moon header-icons"></i>
+										</span>
+                                </a>
+                            </div>
+                            <!-- Theme-Layout -->
+                            <!-- Full screen -->
+                            <div class="dropdown ">
+                                <a class="nav-link icon full-screen-link">
+                                    <i class="fe fe-maximize fullscreen-button fullscreen header-icons"></i>
+                                    <i class="fe fe-minimize fullscreen-button exit-fullscreen header-icons"></i>
+                                </a>
+                            </div>
+                            <!-- Full screen -->
+                            <!-- Profile -->
+                            <div class="dropdown main-profile-menu">
+                                <a class="d-flex" href="javascript:void(0)">
+                                    <span class="main-img-user"><img alt="avatar"
+                                                                     src="{{asset('build/assets/img/brand/app_logo.png2')}}"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <div class="header-navheading">
+                                        <h6 class="main-notification-title">{{auth()->user()->name}}</h6>
+                                        <p class="main-notification-text">{{auth()->user()->email}}</p>
+                                    </div>
+                                    <a class="dropdown-item border-top" href="{{route('profile')}}">
+                                        <i class="fe fe-user"></i> My Profile
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{route('logout')}}">
+                                        <i class="fe fe-power"></i> Sign Out
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Profile -->
+                            <!-- Sidebar -->
+                            <div class="dropdown  header-settings">
+                                <a href="javascript:void(0)" class="nav-link icon" data-bs-toggle="sidebar-right"
+                                   data-bs-target=".sidebar-right">
+                                    <i class="fe fe-align-right header-icons"></i>
+                                </a>
+                            </div>
+                            <!-- Sidebar -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Header-->
+
+    <!-- Sidemenu -->
+    <div class="sticky">
+        <div class="main-menu main-sidebar main-sidebar-sticky side-menu">
+            <div class="main-sidebar-header main-container-1 active">
+                <div class="sidemenu-logo">
+                    <a class="main-logo" href="index.html">
+                        <img src="../assets/img/brand/logo-light.png" class="header-brand-img desktop-logo" alt="logo">
+                        <img src="{{asset('build/assets/img/brand/app_logo.png')}}" class="header-brand-img icon-logo"
+                             alt="logo">
+                        <img src="../assets/img/brand/logo.png" class="header-brand-img desktop-logo theme-logo"
+                             alt="logo">
+                        <img src="../assets/img/brand/icon.png" class="header-brand-img icon-logo theme-logo"
+                             alt="logo">
+                    </a>
+                </div>
+                <div class="main-sidebar-body main-body-1">
+                    <div class="slide-left disabled" id="slide-left"><i class="fe fe-chevron-left"></i></div>
+                    <ul class="menu-nav nav">
+                        <li class="nav-header"><span class="nav-label">لوحة التحكم</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                <span class="shape1"></span>
+                                <span class="shape2"></span>
+                                <i class="ti-home sidemenu-icon menu-icon "></i>
+                                <span class="sidemenu-label">لوحة التحكم</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link with-sub" href="javascript:void(0)">
+                                <span class="shape1"></span>
+                                <span class="shape2"></span>
+                                <i class="ti-write sidemenu-icon menu-icon "></i>
+                                <span class="sidemenu-label">
+										<span class="sidemenu-label2">الصفحات</span>
+									</span>
+                                <i class="angle fe fe-chevron-right"></i>
+                            </a>
+                            <ul class="nav-sub">
+                                <li class="nav-sub-item"><a class="nav-sub-link" href="{{route('page.index')}}"> الصفحات الرئيسية</a></li>
+                                <li class="nav-sub-item"><a class="nav-sub-link" href="{{route('question.index')}}">الاختيارات</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="slide-right" id="slide-right"><i class="fe fe-chevron-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidemenu -->
+    <div class="main-content side-content pt-0">
+
+        <div class="main-container container-fluid">
+            <div class="inner-body">
+
+                @yield('content')
+
+            </div>
+        </div>
+    </div>
+    <!-- Main Content-->
+
+<!-- End Main Content-->
+
+
+    <!-- Main Footer-->
+    <div class="main-footer text-center">
+        <div class="container">
+            <div class="row row-sm">
+                <div class="col-md-12">
+                    <span>Copyright © 2022 <a href="#">RAAQ</a>. Designed by <a
+                            href="">RAAQ</a> All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer-->
+
+    <!-- Sidebar -->
+    <div class="sidebar sidebar-right sidebar-animate">
+        <div class="sidebar-icon">
+            <a href="#" class="text-end float-end text-dark fs-20" data-bs-toggle="sidebar-right"
+               data-bs-target=".sidebar-right"><i class="fe fe-x"></i></a>
+        </div>
+        <div class="sidebar-body">
+            <h5>Todo</h5>
+            <div class="d-flex p-3">
+                <label class="ckbox"><input checked type="checkbox"><span>Hangout With friends</span></label>
+                <span class="ms-auto">
+							<i class="fe fe-edit-2 text-primary me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Edit"></i>
+							<i class="fe fe-trash-2 text-danger me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Delete"></i>
+						</span>
+            </div>
+            <div class="d-flex p-3 border-top">
+                <label class="ckbox"><input type="checkbox"><span>Prepare for presentation</span></label>
+                <span class="ms-auto">
+							<i class="fe fe-edit-2 text-primary me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Edit"></i>
+							<i class="fe fe-trash-2 text-danger me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Delete"></i>
+						</span>
+            </div>
+            <div class="d-flex p-3 border-top">
+                <label class="ckbox"><input type="checkbox"><span>Prepare for presentation</span></label>
+                <span class="ms-auto">
+							<i class="fe fe-edit-2 text-primary me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Edit"></i>
+							<i class="fe fe-trash-2 text-danger me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Delete"></i>
+						</span>
+            </div>
+            <div class="d-flex p-3 border-top">
+                <label class="ckbox"><input checked type="checkbox"><span>System Updated</span></label>
+                <span class="ms-auto">
+							<i class="fe fe-edit-2 text-primary me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Edit"></i>
+							<i class="fe fe-trash-2 text-danger me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Delete"></i>
+						</span>
+            </div>
+            <div class="d-flex p-3 border-top">
+                <label class="ckbox"><input type="checkbox"><span>Do something more</span></label>
+                <span class="ms-auto">
+							<i class="fe fe-edit-2 text-primary me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Edit"></i>
+							<i class="fe fe-trash-2 text-danger me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Delete"></i>
+						</span>
+            </div>
+            <div class="d-flex p-3 border-top">
+                <label class="ckbox"><input type="checkbox"><span>System Updated</span></label>
+                <span class="ms-auto">
+							<i class="fe fe-edit-2 text-primary me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Edit"></i>
+							<i class="fe fe-trash-2 text-danger me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Delete"></i>
+						</span>
+            </div>
+            <div class="d-flex p-3 border-top">
+                <label class="ckbox"><input type="checkbox"><span>Find an Idea</span></label>
+                <span class="ms-auto">
+							<i class="fe fe-edit-2 text-primary me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Edit"></i>
+							<i class="fe fe-trash-2 text-danger me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Delete"></i>
+						</span>
+            </div>
+            <div class="d-flex p-3 border-top mb-0">
+                <label class="ckbox"><input type="checkbox"><span>Project review</span></label>
+                <span class="ms-auto">
+							<i class="fe fe-edit-2 text-primary me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Edit"></i>
+							<i class="fe fe-trash-2 text-danger me-2" data-bs-toggle="tooltip" title=""
+                               data-bs-placement="top" data-bs-original-title="Delete"></i>
+						</span>
+            </div>
+            <h5>Overview</h5>
+            <div class="p-4">
+                <div class="main-traffic-detail-item">
+                    <div>
+                        <span>Founder &amp; CEO</span> <span>24</span>
+                    </div>
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20"
+                             class="progress-bar progress-bar-xs wd-20p" role="progressbar"></div>
+                    </div><!-- progress -->
+                </div>
+                <div class="main-traffic-detail-item">
+                    <div>
+                        <span>UX Designer</span> <span>1</span>
+                    </div>
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="15"
+                             class="progress-bar progress-bar-xs bg-secondary wd-15p" role="progressbar"></div>
+                    </div><!-- progress -->
+                </div>
+                <div class="main-traffic-detail-item">
+                    <div>
+                        <span>Recruitment</span> <span>87</span>
+                    </div>
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="45"
+                             class="progress-bar progress-bar-xs bg-success wd-45p" role="progressbar"></div>
+                    </div><!-- progress -->
+                </div>
+                <div class="main-traffic-detail-item">
+                    <div>
+                        <span>Software Engineer</span> <span>32</span>
+                    </div>
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25"
+                             class="progress-bar progress-bar-xs bg-info wd-25p" role="progressbar"></div>
+                    </div><!-- progress -->
+                </div>
+                <div class="main-traffic-detail-item">
+                    <div>
+                        <span>Project Manager</span> <span>32</span>
+                    </div>
+                    <div class="progress">
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25"
+                             class="progress-bar progress-bar-xs bg-danger wd-25p" role="progressbar"></div>
+                    </div><!-- progress -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+
+
+</div>
+<!-- End Page -->
+
+<!-- Back-to-top -->
+<a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
+
+<!-- Jquery js-->
+<script src="{{asset('/build/assets/plugins/jquery/jquery.min.js')}}"></script>
+
+<!-- Bootstrap js-->
+<script src="{{asset('/build/assets/plugins/bootstrap/js/popper.min.js')}}"></script>
+<script src="{{asset('/build/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+
+<!-- Internal Chart.Bundle js-->
+<script src="{{asset('/build/assets/plugins/chart.js/Chart.bundle.min.js')}}"></script>
+
+<!-- Peity js-->
+<script src="{{asset('/build/assets/plugins/peity/jquery.peity.min.js')}}"></script>
+
+<!-- Select2 js-->
+<script src="{{asset('/build/assets/plugins/select2/js/select2.min.js')}}"></script>
+<script src="{{asset('/build/assets/js/select2.js')}}"></script>
+
+<!-- Perfect-scrollbar js -->
+<script src="{{asset('/build/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+
+<!-- Sidemenu js -->
+<script src="{{asset('/build/assets/plugins/sidemenu/sidemenu.js')}}"></script>
+
+<!-- Sidebar js -->
+<script src="{{asset('/build/assets/plugins/sidebar/sidebar.js')}}"></script>
+
+<!-- Internal Morris js -->
+<script src="{{asset('/build/assets/plugins/raphael/raphael.min.js')}}"></script>
+<script src="{{asset('/build/assets/plugins/morris.js/morris.min.js')}}"></script>
+
+<!-- Circle Progress js-->
+<script src="{{asset('/build/assets/js/circle-progress.min.js')}}"></script>
+<script src="{{asset('/build/assets/js/chart-circle.js')}}"></script>
+
+<!-- Internal Dashboard js-->
+<script src="{{asset('/build/assets/js/index.js')}}"></script>
+
+<!-- Color Theme js -->
+<script src="{{asset('/build/assets/js/themeColors.js')}}"></script>
+
+<!-- Sticky js -->
+<script src="{{asset('/build/assets/js/sticky.js')}}"></script>
+
+<!-- Custom js -->
+<script src="{{asset('/build/assets/js/custom.js')}}"></script>
+@yield('script')
+</body>
+
+</html>
