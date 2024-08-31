@@ -129,7 +129,7 @@ class UserTestController extends Controller
 
             return response()->json([
                 'uuid' => $request->uuid,
-                'link' => $path
+                'link' => 'app/public/result/' . $request->uuid . '.pdf'
             ]);
         }
 
