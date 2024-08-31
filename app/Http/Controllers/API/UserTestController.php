@@ -124,7 +124,7 @@ class UserTestController extends Controller
 
             FinalUserResult::create([
                 'uuid' => $request->uuid,
-                'result_link' => $path
+                'result_link' => 'app/public/result/' . $request->uuid . '.pdf'
             ]);
 
             return response()->json([
