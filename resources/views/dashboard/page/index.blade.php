@@ -1,6 +1,15 @@
 @extends('dashboard.layouts.app')
 @section('content')
 
+    @error('page_number')
+    <div class="alert alert-danger mg-b-0" role="alert">
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>!خطأ </strong> رقم الصفحة يجب الا يكون مكرر
+    </div>
+    @enderror
+
     @if (session('success'))
         <div class="alert alert-success" role="alert">
             <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button">
@@ -34,6 +43,7 @@
                             <tr>
                                 <th>كود</th>
                                 <th>الاسم</th>
+                                <th>رقم الصفحة</th>
                                 <th>عمليات</th>
                             </tr>
                             </thead>
@@ -43,9 +53,10 @@
                                 <tr>
                                     <th scope="row">{{$page->id}}</th>
                                     <td>{{$page->name}}</td>
+                                    <td>{{$page->page_number}}</td>
                                     <td class="d-flex">
                                         <a class="btn btn-success btn-with-icon me-2" data-bs-target="#editPage"
-                                           data-bs-toggle="modal" data-id="{{$page->id}}" data-name="{{$page->name}}"
+                                           data-bs-toggle="modal" data-id="{{$page->id}}" data-name="{{$page->name}}" data-page="{{$page->page_number}}"
                                            href=""><i class="fe fe-edit"></i>تعديل</a>
 
                                         <a class="btn btn-danger btn-with-icon me-2" data-bs-target="#deletePage"
@@ -76,6 +87,9 @@
                     <div class="form-group">
                         <label for="name" class="mg-b-10">اسم الصفحة</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="اسم الصفحة" required>
+                        <br>
+                        <label for="page_number" class="mg-b-10">رقم الصفحة</label>
+                        <input type="number" min="1" step="1" class="form-control" id="page_number" name="page_number" placeholder="رقم الصفحة" required>
                     </div>
                     <div class="modal-footer">
                         <button class="btn ripple btn-primary" type="submit">اضافة</button>
@@ -100,6 +114,9 @@
                     <div class="form-group">
                         <label for="name" class="mg-b-10">اسم الصفحة</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="اسم الصفحة" required>
+                        <br>
+                        <label for="page_number" class="mg-b-10">رقم الصفحة</label>
+                        <input type="number" min="1" step="1" class="form-control" id="page_number" name="page_number" placeholder="رقم الصفحة" required>
                         <input type="hidden" class="form-control" value="" name="id">
                     </div>
                     <div class="modal-footer">
@@ -172,6 +189,7 @@
                 // Extract info from data-id and data-name attributes
                 var pageId = button.getAttribute('data-id');
                 var pageName = button.getAttribute('data-name');
+                var pageNumber = button.getAttribute('data-page');
 
                 // Update the hidden input field inside the modal with the page ID
                 var hiddenInput = editModal.querySelector('input[name="id"]');
@@ -180,6 +198,9 @@
                 // Update the span or any element that will show the page name
                 var Input = editModal.querySelector('input[name="name"]');
                     Input.value = pageName;
+
+                var InputPageNumber = editModal.querySelector('input[name="page_number"]');
+                InputPageNumber.value = pageNumber;
             });
         });
     </script>

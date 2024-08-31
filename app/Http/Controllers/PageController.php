@@ -30,7 +30,7 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        if (Page::create(['name' => $request->name])) {
+        if (Page::create(['name' => $request->name,'page_number' => $request->page_number])) {
             return redirect()->back()->with('success', 'تم حفظ البيانات بنجاح');
         }
         return redirect()->back()->with('error', 'حدث خطأ اثناء الحفظ الرجاء المحاولة مره اخرى');
@@ -57,9 +57,18 @@ class PageController extends Controller
      */
     public function update(Request $request)
     {
+        $request->validate([
+            'page_number' => [
+                'required','integer','unique:pages,page_number,' . $request->id . ',id'
+            ],
+            'name' => [
+                'required',
+            ]
+        ]);
+
         if (Page::where('id', $request->id)->update([
             'name' => $request->name,
-
+            'page_number' => $request->page_number
         ])) {
             return redirect()->back()->with('success', 'تم حفظ البيانات بنجاح');
         }

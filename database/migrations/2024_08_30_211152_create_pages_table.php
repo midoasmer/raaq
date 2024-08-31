@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('page_number')->unique();
             $table->timestamps();
         });
     }

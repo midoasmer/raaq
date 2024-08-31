@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('takeTest')->group(function (){
     Route::post('/',[UserTestController::class, 'start']);
-//    Route::post('/add', [PageController::class, 'store'])->name('page.add');
+    Route::post('/save_questions', [UserTestController::class, 'saveQuestions']);
 //    Route::post('/update', [PageController::class, 'update'])->name('page.update');
 //    Route::post('/delete', [PageController::class, 'destroy'])->name('page.delete');
 });
