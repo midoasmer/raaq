@@ -3,11 +3,11 @@
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\SettingsController;
 use App\Models\UserResult;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
-use Mpdf\Mpdf;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +41,14 @@ Route::prefix('question')->middleware('auth')->group(function (){
     Route::post('/delete', [QuestionController::class, 'destroy'])->name('question.delete');
 });
 
+Route::prefix('setting')->middleware('auth')->group(function (){
+    Route::get('/',[SettingsController::class, 'index'])->name('setting.index');
+    Route::post('/add', [QuestionController::class, 'store'])->name('question.add');
+    Route::post('/update', [QuestionController::class, 'update'])->name('question.update');
+    Route::post('/delete', [QuestionController::class, 'destroy'])->name('question.delete');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
     return view('dashboard');
@@ -52,37 +60,29 @@ Route::get('/test/result', function () {
     $uuid = "75a9200d-ed79-4487-8de3-9972f17d0897"; // مثال UUID
     $results = \App\Models\UserResult::query()->where('uuid', $uuid)->get();
 
+
+
+
+    $html = view('result.pdf.resultPdf',['results' => $results])->toArabicHTML();
+
+    $pdf = PDF::loadHTML($html)->output();
+
+    $headers = array(
+        "Content-type" => "application/pdf",
+    );
+
+// Create a stream response as a file download
+    return response()->streamDownload(
+        fn () => print($pdf), // add the content to the stream
+        "invoice.pdf", // the name of the file/stream
+        $headers
+    );
+
+    $pdf = PDF::loadView('result.pdf.resultPdf', ['results' => $results]);
+    return $pdf->download('example.pdf');
+
     // إعداد مسار الخطوط
     $fontDir = public_path('fonts');
-
-
-    $mpdf = new Mpdf([
-        'fontDir' => [$fontDir],
-        'fontdata' => [
-            'cairo' => [
-                'R' => 'Cairo.ttf',
-                'useOTL' => 0x80,
-                'useKashida' => 75,
-            ],
-        ],
-        'default_font' => 'cairo',
-        'mode' => 'utf-8',
-        'format' => 'A4',
-        'tempDir' => storage_path('app/public/temp'),
-        'autoScriptToLang' => true,
-        'autoLangToFont' => true,
-        'defaultPageNumStyle' => 'arabic-indic',
-        'setAutoTopMargin' => 'pad',
-        'margin_top' => 0,
-        'margin_header' => 0,
-        'margin_footer' => 5,
-        'margin_right' => 0,
-        'margin_left' => 0,
-        'margin_bottom' => 0,
-    ]);
-
-
-
 
 
     $html = view('result.pdf.resultPdf', ['results' => $results])->render();

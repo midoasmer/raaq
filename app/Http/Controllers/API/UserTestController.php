@@ -7,10 +7,10 @@ use App\Models\FinalUserResult;
 use App\Models\Page;
 use App\Models\Question;
 use App\Models\UserResult;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Mpdf\Mpdf;
 
 class UserTestController extends Controller
 {
@@ -61,7 +61,7 @@ class UserTestController extends Controller
 
         $request->validate([
             'uuid' => [
-                'required', 'string', 'exists:user_results,uuid','unique:final_user_results,uuid'
+                'required', 'string', 'exists:user_results,uuid'
             ],
             'page_id' => [
                 'required', 'integer', 'exists:pages,id'
@@ -84,53 +84,39 @@ class UserTestController extends Controller
             ]
         );
 
-        if($request->next_page_id){
+        if ($request->next_page_id) {
             $options = Question::query()->where('page_id', $request->next_page_id)->get(['id', 'question', 'page_id']);
 
             return response()->json([
                 'uuid' => $request->uuid,
                 'questions' => $options
             ]);
-        }else{
+        } else {
 
             $results = \App\Models\UserResult::query()->where('uuid', $request->uuid)->get();
-            $fontDir = public_path('fonts');
 
-            $mpdf = new Mpdf([
-                'fontDir' => [$fontDir],
-                'fontdata' => [
-                    'cairo' => [
-                        'R' => 'Cairo.ttf',
-                        'useKashida' => 75,
-                    ],
-                ],
-                'default_font' => 'cairo',
-                'mode' => 'utf-8',
-                'format' => 'A4',
-                'tempDir' => storage_path('app/public/temp'),
-                'autoScriptToLang' => true,
-                'autoLangToFont' => true,
-                'defaultPageNumStyle' => 'arabic-indic',
-                'setAutoTopMargin' => 'pad',
+            $html = view('result.pdf.resultPdf', ['results' => $results])->toArabicHTML();
+
+            $pdf = PDF::loadHTML($html)->output();
+// تحديد مسار الحفظ (داخل مجلد التخزين storage)
+            $uuid = $request->uuid; // استخدام الـ UUID كجزء من اسم الملف
+            $path = storage_path('app/public/result/' . $uuid . '.pdf'); // مسار الحفظ
+// حفظ ملف PDF
+            file_put_contents($path, $pdf);
+
+            FinalUserResult::updateOrCreate([
+                'uuid' => $uuid,
+            ],
+            [
+                'result_link' => 'storage/result/' . $uuid . '.pdf'
             ]);
-
-            $html = view('result.pdf.resultPdf', ['results' => $results])->render();
-
-            $mpdf->WriteHTML($html);
-
-            $path = storage_path('app/public/result/' . $request->uuid . '.pdf');
-
-            $mpdf->Output($path, \Mpdf\Output\Destination::FILE);
-
-            FinalUserResult::create([
-                'uuid' => $request->uuid,
-                'result_link' => 'app/public/result/' . $request->uuid . '.pdf'
-            ]);
+//            $options->result_link =
 
             return response()->json([
                 'uuid' => $request->uuid,
-                'link' => 'app/public/result/' . $request->uuid . '.pdf'
+                'link' => 'storage/result/' . $uuid . '.pdf',
             ]);
+
         }
 
 
