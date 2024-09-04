@@ -59,6 +59,7 @@ class UserTestController extends Controller
     public function saveQuestions(Request $request)
     {
 
+
         $request->validate([
             'uuid' => [
                 'required', 'string', 'exists:user_results,uuid'
@@ -98,23 +99,21 @@ class UserTestController extends Controller
             $html = view('result.pdf.resultPdf', ['results' => $results])->toArabicHTML();
 
             $pdf = PDF::loadHTML($html)->output();
-// تحديد مسار الحفظ (داخل مجلد التخزين storage)
-            $uuid = $request->uuid; // استخدام الـ UUID كجزء من اسم الملف
-            $path = storage_path('app/public/result/' . $uuid . '.pdf'); // مسار الحفظ
-// حفظ ملف PDF
+            $uuid = $request->uuid;
+            $path =  public_path('result/'.$uuid . '.pdf');
+
             file_put_contents($path, $pdf);
 
             FinalUserResult::updateOrCreate([
                 'uuid' => $uuid,
             ],
             [
-                'result_link' => 'storage/result/' . $uuid . '.pdf'
+                'result_link' => '/result/' . $uuid . '.pdf'
             ]);
-//            $options->result_link =
 
             return response()->json([
                 'uuid' => $request->uuid,
-                'link' => 'storage/result/' . $uuid . '.pdf',
+                'link' => '/result/' . $uuid . '.pdf',
             ]);
 
         }

@@ -78,23 +78,6 @@ Route::get('/test/result', function () {
         $headers
     );
 
-    $pdf = PDF::loadView('result.pdf.resultPdf', ['results' => $results]);
-    return $pdf->download('example.pdf');
-
-    // إعداد مسار الخطوط
-    $fontDir = public_path('fonts');
-
-
-    $html = view('result.pdf.resultPdf', ['results' => $results])->render();
-
-    $mpdf->WriteHTML($html);
-
-    $path = storage_path('app/public/result/' . $uuid . '.pdf');
-
-    $mpdf->Output($path, \Mpdf\Output\Destination::FILE);
-
-
-    return response()->download($path);
 });
 
 
