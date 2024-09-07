@@ -19,6 +19,16 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
+Route::get('/getSetting', function () {
+   return response()->json([
+       'whatsApp' => [
+           'محمد مرعى' => '+201141874780',
+           'عبد الله ايهاب' => '+201115922240'
+       ]
+   ]);
+});
+
+
 Route::prefix('takeTest')->group(function (){
     Route::post('/',[UserTestController::class, 'start']);
     Route::post('/save_questions', [UserTestController::class, 'saveQuestions']);
