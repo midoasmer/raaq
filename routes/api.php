@@ -20,17 +20,23 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/getSetting', function () {
-   return response()->json([
-       'whatsApp' => [
-           'محمد مرعى' => '+201141874780',
-           'عبد الله ايهاب' => '+201115922240'
-       ]
-   ]);
+    return response()->json([
+        'whatsApp' => [
+            [
+                "name" => 'محمد مرعى',
+                "phone" => '01141874780'
+            ],
+            [
+                "name" => 'عبد الله ايهاب',
+                "phone" => '01115922240'
+            ]
+        ]
+    ]);
 });
 
 
-Route::prefix('takeTest')->group(function (){
-    Route::post('/',[UserTestController::class, 'start']);
+Route::prefix('takeTest')->group(function () {
+    Route::post('/', [UserTestController::class, 'start']);
     Route::post('/save_questions', [UserTestController::class, 'saveQuestions']);
 //    Route::post('/update', [PageController::class, 'update'])->name('page.update');
 //    Route::post('/delete', [PageController::class, 'destroy'])->name('page.delete');
