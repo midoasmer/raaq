@@ -1,0 +1,121 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-size: contain;
+    background-position: center center;
+    background-attachment: fixed;
+    background: linear-gradient(rgba(228, 228, 231, 0.915), rgba(228, 228, 231, 0.915)), url(imag/R.webp);
+}
+
+img {
+    width: 55px;
+}
+
+section {
+    width: Fixed (1, 240px) px;
+    height: Fixed (1, 452px) px;
+    top: 1px;
+    padding: 48px 24px 48px 24px;
+    gap: 8px;
+    border-radius: 16px 0px 0px 0px;
+    opacity: 0px;
+
+}
+
+h6 {
+    font-family: Noto Kufi Arabic;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: right;
+    color: #6F5A41;
+    position: relative;
+}
+
+.tatel {
+
+    font-family: Noto Kufi Arabic;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: right;
+}
+
+label {
+    font-family: Noto Kufi Arabic;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 41.37px;
+    text-align: right;
+    margin-right: 4px;
+    accent-color: red;
+
+}
+
+.e {
+    border: solid 1px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-top: 10px;
+
+    box-shadow: 0 0 0 3px #bbbcbe;
+
+
+}
+
+input {
+    /* accent-color: #6F5A41; */
+    padding: 2px;
+    color: #6F5A41;
+    background-color: aqua;
+}
+
+span {
+    font-family: Noto Kufi Arabic;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: right;
+
+}
+
+button {
+    background-color: #6F5A41;
+    color: #D1D5DB;
+}
+
+.foo {
+    background-color: #6F5A41;
+}
+
+i {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #6F5A41;
+    position: relative;
+    margin-left: 30px;
+    color: #D1D5DB;
+}
+
+.foo p {
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #D1D5DB;
+
+}
+
+input[type=checbox] {
+    accent-color: #6F5A41;
+}
+button{
+    border: #6F5A41 solid;
+}

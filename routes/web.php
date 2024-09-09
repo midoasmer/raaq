@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\UserTestController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
@@ -48,6 +49,15 @@ Route::prefix('setting')->middleware('auth')->group(function (){
     Route::post('/delete', [QuestionController::class, 'destroy'])->name('question.delete');
 });
 
+Route::prefix('takeTest/front')->group(function () {
+    Route::get('/start', function () {
+        return view('test.start');
+    })->name('start');
+    Route::post('/', [UserTestController::class, 'startWeb'])->name('takeTest.start');
+    Route::post('/save_questions', [UserTestController::class, 'saveQuestionsWeb'])->name('takeTest.saveQuestions');
+//    Route::post('/update', [PageController::class, 'update'])->name('page.update');
+//    Route::post('/delete', [PageController::class, 'destroy'])->name('page.delete');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
@@ -57,6 +67,7 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/test/result', function () {
+    return ".,mnbv";
     $uuid = "75a9200d-ed79-4487-8de3-9972f17d0897"; // مثال UUID
     $results = \App\Models\UserResult::query()->where('uuid', $uuid)->get();
 
@@ -81,9 +92,9 @@ Route::get('/test/result', function () {
 });
 
 
-Route::get('/dashboard/dash', function () {
-    return view('dashboard.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboardDash');
+//Route::get('/test/start', function () {
+//    return view('test.start');
+//});
 
 
 //Route::middleware('auth')->group(function () {

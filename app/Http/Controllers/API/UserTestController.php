@@ -100,16 +100,16 @@ class UserTestController extends Controller
 
             $pdf = PDF::loadHTML($html)->output();
             $uuid = $request->uuid;
-            $path =  public_path('result/'.$uuid . '.pdf');
+            $path = public_path('result/' . $uuid . '.pdf');
 
             file_put_contents($path, $pdf);
 
             FinalUserResult::updateOrCreate([
                 'uuid' => $uuid,
             ],
-            [
-                'result_link' => '/result/' . $uuid . '.pdf'
-            ]);
+                [
+                    'result_link' => '/result/' . $uuid . '.pdf'
+                ]);
 
             return response()->json([
                 'uuid' => $request->uuid,
@@ -122,4 +122,121 @@ class UserTestController extends Controller
     }
 
 
+    public function startWeb(Request $request)
+    {
+
+        $request->validate([
+            'gender' => [
+                'required', 'in:male,female',
+            ],
+            'status' => [
+                'required', 'in:married,single,divorced,widower',
+            ],
+            'age' => [
+                'required', 'integer',
+            ]
+        ]);
+        $data = [
+            'gender' => $request->gender,
+            'status' => $request->status,
+            'age' => $request->age
+        ];
+
+        $uuid = (string)Str::uuid();
+        UserResult::create([
+                'uuid' => $uuid,
+                'page_id' => 0,
+                'questions' => json_encode($data)
+            ]
+
+        );
+
+        $page = Page::select(['id', 'name', 'page_number'])
+            ->orderBy('page_number', 'asc')
+            ->first();
+        $questions = Question::query()->where('page_id', $page->id)->get(['id', 'question', 'page_id']);
+        return view('test/questions', compact('uuid', 'page', 'questions'));
+
+    }
+
+    public function saveQuestionsWeb(Request $request)
+    {
+        if($request->questions[0] == -1){
+            return view('test/healthy');
+        }
+
+//        $request->validate([
+//            'uuid' => [
+//                'required', 'string', 'exists:user_results,uuid'
+//            ],
+//            'page_id' => [
+//                'required', 'integer', 'exists:pages,id'
+//            ],
+//            'next_page_number' => [
+//                'sometimes', 'integer', 'exists:pages,id'
+//            ],
+//            'questions' => [
+//                'required', 'array',
+//            ]
+//        ]);
+
+        UserResult::updateOrCreate(
+            [
+                'uuid' => $request->uuid,
+                'page_id' => $request->page_id
+            ],
+            [
+                'questions' => json_encode(array_map('intval', $request->questions))
+            ]
+        );
+
+        $page = Page::where('page_number', $request->next_page_number)
+            ->first();
+        if (isset($page)) {
+
+            $questions = Question::query()->where('page_id',$page->id)->get(['id', 'question', 'page_id']);
+            $uuid = $request->uuid;
+            return view('test/questions', compact('uuid', 'page', 'questions'));
+
+        } else {
+
+            $results = \App\Models\UserResult::query()->where('uuid', $request->uuid)->get();
+
+            $html = view('result.pdf.resultPdf', ['results' => $results])->toArabicHTML();
+
+            $pdf = PDF::loadHTML($html)->output();
+            $uuid = $request->uuid;
+            $path = public_path('result/' . $uuid . '.pdf');
+
+            file_put_contents($path, $pdf);
+
+            FinalUserResult::updateOrCreate([
+                'uuid' => $uuid,
+            ],
+                [
+                    'result_link' => '/result/' . $uuid . '.pdf'
+                ]);
+
+            $contacts =[
+                [
+                    "name" => 'محمد مرعى',
+                    "phone" => '+201141874780'
+                ],
+                [
+                    "name" => 'عبد الله ايهاب',
+                    "phone" => '+201115922240'
+                ],
+                [
+                    "name" => 'حمدى امام',
+                    "phone" => '+201120006040'
+                ],
+            ];
+            $link = '/result/' . $uuid . '.pdf';
+            return view('test/result', compact('uuid', 'link', 'contacts'));
+
+
+        }
+
+
+    }
 }

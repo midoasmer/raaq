@@ -1,0 +1,92 @@
+body{
+    padding: 0!important;
+    margin: 0!important;
+    box-sizing: border-box !important;
+    background-size: contain !important;
+    background-position: center center !important;
+    background-attachment: fixed;
+    background: linear-gradient(rgba(228, 228, 231, 0.915), rgba(228, 228, 231, 0.915)), url(imag/R.webp);
+}
+img{
+    width: 55px !important;
+}
+section{
+    width: Hug (800.95px)px !important;
+    height: Fixed (543px)px !important;
+    top: 251px !important;
+    left: 320px !important;
+    padding: 39px 104px 39px 104px !important;
+    gap: 8px !important;
+    border-radius: 16px 0px 0px 0px !important;
+    opacity: 0px !important;
+
+
+}
+
+
+.foo{
+    background-color:  #6F5A41 !important;
+
+
+}
+i{
+    font-size: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    border-radius: 50% !important;
+    margin: auto !important;
+    margin-bottom: 10px !important;
+    background-color: #6F5A41 !important;
+    position: relative !important;
+    margin-left: 30px !important;
+    color: #D1D5DB !important;
+}
+.foo p{
+
+        font-family: Inter !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 20px !important;
+        color: #D1D5DB !important;
+
+}
+
+.e{
+    background-color: #6F5A41 !important;
+    color: #D1D5DB !important;
+    font-family: Noto Kufi Arabic !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 37.92px !important;
+    text-align: center !important;
+
+}
+.tetal{
+    font-family: Noto Kufi Arabic !important;
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    line-height: 42.9px !important;
+    text-align: center !important;
+    color:  #6F5A41 !important;
+}
+.A{
+    color: #6F5A41 !important;
+    font-family: Noto Kufi Arabic !important;
+font-size: 24px !important;
+font-weight: 600 !important;
+line-height: 37.92px !important;
+text-align: center !important;
+
+}
+.ww{
+    width: 666px !important;
+height: 172px !important;
+left: -54.19px !important;
+gap: 0px !important;
+opacity: 0px !important;
+
+}
+button{
+    border: #6F5A41 solid !important;
+}
