@@ -25,9 +25,9 @@ Route::get('/getSetting', function () {
      $sheikhs = Sheikh::all('name','phone');
 
     return response()->json([
-        'whatsApp' => [
+        'whatsApp' =>
             $sheikhs
-        ]
+        
     ]);
 //    return response()->json([
 //        'whatsApp' => [
