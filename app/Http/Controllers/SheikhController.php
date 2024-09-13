@@ -14,7 +14,7 @@ class SheikhController extends Controller
     public function index()
     {
         $sheikhs = Sheikh::all();
-        return view('dashboard.sheikh.index', compact('sheikhs'));
+        return view('dashboard.Sheikh.index', compact('sheikhs'));
     }
 
     /**
