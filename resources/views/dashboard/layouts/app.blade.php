@@ -100,7 +100,7 @@
                             <div class="dropdown main-profile-menu">
                                 <a class="d-flex" href="javascript:void(0)">
                                     <span class="main-img-user"><img alt="avatar"
-                                                                     src="{{asset('build/assets/img/brand/app_logo.png2')}}"></span>
+                                                                     src="{{asset('build/assets/img/brand/raaq.png')}}"></span>
                                 </a>
                                 <div class="dropdown-menu">
                                     <div class="header-navheading">
@@ -138,16 +138,17 @@
         <div class="main-menu main-sidebar main-sidebar-sticky side-menu">
             <div class="main-sidebar-header main-container-1 active">
                 <div class="sidemenu-logo">
-                    <a class="main-logo" href="index.html">
-                        <img src="../assets/img/brand/logo-light.png" class="header-brand-img desktop-logo" alt="logo">
-                        <img src="{{asset('build/assets/img/brand/app_logo.png')}}" class="header-brand-img icon-logo"
+                    <a class="main-logo" href="#">
+                        <img src="{{asset('build/assets/img/brand/raaq.png')}}" class="header-brand-img desktop-logo" style="border-radius: 50%" width="150" height="150" alt="logo">
+                        <img src="{{asset('build/assets/img/brand/raaq.png')}}" class="header-brand-img icon-logo"
                              alt="logo">
-                        <img src="../assets/img/brand/logo.png" class="header-brand-img desktop-logo theme-logo"
+                        <img src="{{asset('build/assets/img/brand/raaq.png')}}" class="header-brand-img desktop-logo theme-logo"
                              alt="logo">
-                        <img src="../assets/img/brand/icon.png" class="header-brand-img icon-logo theme-logo"
+                        <img src="{{asset('build/assets/img/brand/raaq.png')}}" class="header-brand-img icon-logo theme-logo"
                              alt="logo">
                     </a>
                 </div>
+                <br><br><br><br><br><br>
                 <div class="main-sidebar-body main-body-1">
                     <div class="slide-left disabled" id="slide-left"><i class="fe fe-chevron-left"></i></div>
                     <ul class="menu-nav nav">
@@ -187,8 +188,8 @@
                                 <i class="angle fe fe-chevron-right"></i>
                             </a>
                             <ul class="nav-sub">
-                                <li class="nav-sub-item"><a class="nav-sub-link" href="{{route('setting.index')}}"> اعدادات التواصل</a></li>
-                                <li class="nav-sub-item"><a class="nav-sub-link" href="{{route('question.index')}}">الاختيارات</a></li>
+                                <li class="nav-sub-item"><a class="nav-sub-link" href="{{route('sheikh.index')}}">المعالجين</a></li>
+{{--                                <li class="nav-sub-item"><a class="nav-sub-link" href="{{route('setting.index')}}">الاختيارات</a></li>--}}
                             </ul>
                         </li>
                     </ul>

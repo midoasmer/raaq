@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\SheikhController;
 use App\Models\UserResult;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Route;
@@ -43,10 +44,10 @@ Route::prefix('question')->middleware('auth')->group(function (){
 });
 
 Route::prefix('setting')->middleware('auth')->group(function (){
-    Route::get('/',[SettingsController::class, 'index'])->name('setting.index');
-    Route::post('/add', [QuestionController::class, 'store'])->name('question.add');
-    Route::post('/update', [QuestionController::class, 'update'])->name('question.update');
-    Route::post('/delete', [QuestionController::class, 'destroy'])->name('question.delete');
+    Route::get('/sheikh',[SheikhController::class, 'index'])->name('sheikh.index');
+    Route::post('/sheikh/add', [SheikhController::class, 'store'])->name('sheikh.add');
+    Route::post('/sheikh/update', [SheikhController::class, 'update'])->name('sheikh.update');
+    Route::post('/sheikh/delete', [SheikhController::class, 'destroy'])->name('sheikh.delete');
 });
 
 Route::prefix('takeTest/front')->group(function () {
@@ -55,8 +56,6 @@ Route::prefix('takeTest/front')->group(function () {
     })->name('start');
     Route::post('/', [UserTestController::class, 'startWeb'])->name('takeTest.start');
     Route::post('/save_questions', [UserTestController::class, 'saveQuestionsWeb'])->name('takeTest.saveQuestions');
-//    Route::post('/update', [PageController::class, 'update'])->name('page.update');
-//    Route::post('/delete', [PageController::class, 'destroy'])->name('page.delete');
 });
 
 Route::get('/dashboard', function () {

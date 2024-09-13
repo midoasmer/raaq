@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\FinalUserResult;
 use App\Models\Page;
 use App\Models\Question;
+use App\Models\Sheikh;
 use App\Models\UserResult;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
@@ -217,20 +218,7 @@ class UserTestController extends Controller
                     'result_link' => '/result/' . $uuid . '.pdf'
                 ]);
 
-            $contacts =[
-                [
-                    "name" => 'محمد مرعى',
-                    "phone" => '+201141874780'
-                ],
-                [
-                    "name" => 'عبد الله ايهاب',
-                    "phone" => '+201115922240'
-                ],
-                [
-                    "name" => 'حمدى امام',
-                    "phone" => '+201120006040'
-                ],
-            ];
+            $contacts = Sheikh::all('name','phone');
             $link = '/result/' . $uuid . '.pdf';
             return view('test/result', compact('uuid', 'link', 'contacts'));
 

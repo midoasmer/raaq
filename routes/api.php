@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\UserTestController;
+use App\Models\Sheikh;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,18 +21,26 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/getSetting', function () {
+
+     $sheikhs = Sheikh::all('name','phone');
+
     return response()->json([
         'whatsApp' => [
-            [
-                "name" => 'محمد مرعى',
-                "phone" => '+201141874780'
-            ],
-            [
-                "name" => 'عبد الله ايهاب',
-                "phone" => '+201115922240'
-            ]
+            $sheikhs
         ]
     ]);
+//    return response()->json([
+//        'whatsApp' => [
+//            [
+//                "name" => 'محمد مرعى',
+//                "phone" => '+201141874780'
+//            ],
+//            [
+//                "name" => 'عبد الله ايهاب',
+//                "phone" => '+201115922240'
+//            ]
+//        ]
+//    ]);
 });
 
 
