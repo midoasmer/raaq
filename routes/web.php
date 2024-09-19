@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Storage;
 */
 
 Route::get('/', function () {
-    return view('test.start');
+    return view('test.welcome');
 });
 Route::prefix('profile')->middleware('auth')->group(function (){
     Route::get('/',[ProfileController::class, 'edit'])->name('profile');

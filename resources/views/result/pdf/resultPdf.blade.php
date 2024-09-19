@@ -87,6 +87,7 @@
             @endphp
             @if($result->page_id == 0)
                 <h1>بيانات عامة</h1>
+                <h2>الاسم : {{$options->name}} </h2>
                 <h2> الجنس : {{ \App\Models\UserResult::gender[$options->gender]}} </h2>
                 <h2> الحالة الاجتماعية : {{ \App\Models\UserResult::status[$options->status]}} </h2>
                 <h2>العمر : {{$options->age}} </h2>

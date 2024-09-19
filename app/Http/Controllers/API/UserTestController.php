@@ -27,12 +27,16 @@ class UserTestController extends Controller
             ],
             'age' => [
                 'required', 'integer',
+            ],
+            'name' => [
+                'required',
             ]
         ]);
         $data = [
             'gender' => $request->gender,
             'status' => $request->status,
-            'age' => $request->age
+            'age' => $request->age,
+            'name' => $request->name
         ];
 
         $uuid = (string)Str::uuid();
@@ -135,12 +139,16 @@ class UserTestController extends Controller
             ],
             'age' => [
                 'required', 'integer',
+            ],
+            'name' => [
+                'required',
             ]
         ]);
         $data = [
             'gender' => $request->gender,
             'status' => $request->status,
-            'age' => $request->age
+            'age' => $request->age,
+            'name' => $request->name
         ];
 
         $uuid = (string)Str::uuid();

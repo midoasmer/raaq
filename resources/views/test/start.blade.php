@@ -36,9 +36,16 @@
                         <label class="w" for="6">اعزب</label>
                         <input class="form-check-input  e" type="radio" value="single" name="status" id="6" required>
                     </div>
-                    <h6>العمر</h6>
                     <div class="d-grid gap-2 ps-2">
-                        <input type="number" name="age" class="form-control age text-center  rounded-4" required  id="floatingInputDisabled" placeholder="قم بادخال عمرك" >
+                        <h6>العمر</h6>
+                        <input type="number" min="15" max="80" name="age" class="form-control age text-center  rounded-4" required  id="floatingInputDisabled" placeholder="قم بادخال عمرك (من 15 الى 80 عام ) " >
+                    </div>
+                    <div class="d-grid gap-2 ps-2">
+                        <h6>الاسم</h6>
+                        <input type="text" name="name" class="form-control age text-center  rounded-4" required  placeholder="قم بادخال اسمك" >
+                    </div>
+                    <br>
+                    <div class="d-grid gap-2 ps-2">
                         <button class="rounded-4 py-1" type="submit">ابدا الاختبار</button>
                     </div>
 
