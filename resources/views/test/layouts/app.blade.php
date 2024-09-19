@@ -32,25 +32,24 @@
 
 </header>
 
-<footer class="pt-4">
-    <div class="foo ">
+<footer class="pt-5 ">
+    <div class="foo fixed-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="lead text-start c justify-content-center align-items-center  mt-3">
+                    <p class="lead text-start justify-content-center align-items-center  mt-3">
                         © 2024 RAAQ. All rights reserved
                     </p>
                 </div>
-                <div class="col-md-6 text-end text-danger d-flex align-items-center justify-content-end ">
-                    <a href="" class=""><i class="fa-brands fa-instagram m-auto align-items-center justify-content-center "></i></a>
-                    <a href="" class=" m-2"><i class="fa-brands fa-whatsapp m-auto "></i></a>
-                    <a href="" class=""><i class="fa-brands fa-youtube m-auto"></i></a>
-                </div>
+{{--                <div class="col-md-6 text-end text-danger d-flex align-items-center justify-content-end ">--}}
+{{--                    <a href="" class=""><i class="fa-brands fa-instagram m-auto align-items-center justify-content-center "></i></a>--}}
+{{--                    <a href="" class=" m-2"><i class="fa-brands fa-whatsapp m-auto "></i></a>--}}
+{{--                    <a href="" class=""><i class="fa-brands fa-youtube m-auto"></i></a>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
 </footer>
-
 @yield('script')
 </body>
 </html>
