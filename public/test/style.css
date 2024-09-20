@@ -5,8 +5,8 @@ body{
     background-size: contain;
     background-position: center center;
     background-attachment: fixed;
-    background:linear-gradient(rgba(228, 228, 231, 0.915),rgba(228, 228, 231, 0.915)),url(imag/R.webp);
-
+    background:linear-gradient(rgba(228, 228, 231, 0.915),rgba(228, 228, 231, 0.915)),url(image/R.webp);
+    
 
 
 }
@@ -34,8 +34,8 @@ color: #525252;
 }
 .foo{
     background-color:  #6F5A41;
-
-
+    
+   
 }
 i{
     font-size: 20px;
@@ -48,25 +48,25 @@ i{
     background-color: #6F5A41;
     position: relative;
     margin-left: 30px;
-    color: #D1D5DB;
+    color: #D1D5DB;  
 }
 .foo p{
-
+    
         font-family: Inter;
         font-size: 14px;
         font-weight: 400;
         line-height: 20px;
         color: #D1D5DB;
-
+    
 }
 
 .design-input{
     border: solid 1px ;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin-left: 5px;
     margin-top: 10px;
-
+    
     box-shadow: 0 0 0 3px #bbbcbe;
 
 
@@ -159,7 +159,7 @@ text-align: right;
    line-height: 37.94px;
    text-align: center;
    color:  #525252;
-
+   
    }
    .raaq-h1{
  font-family: Noto Kufi Arabic;
@@ -177,7 +177,7 @@ text-align: center;
     width: 150px;
     height: 35px;
     border: solid #6F5A41 1px;
-
+    
     }
     .addres-1{
         font-family: Noto Kufi Arabic;
@@ -187,7 +187,7 @@ text-align: center;
     text-align: right;
     color: #6F5A41;
     }
-
+    
     .addres-raaq{
         font-family: Droid Arabic Kufi;
     font-size: 96px;
@@ -195,12 +195,11 @@ text-align: center;
     line-height: 182.95px;
     text-align: center;
     color: #6F5A41;
-
     }
     .raaq-div{
         background-color: #FFF5EA;
-
-
+        
+        
         }
     .addres-raaq-p{
         font-family: Noto Kufi Arabic;
@@ -208,7 +207,7 @@ text-align: center;
     font-weight: 500;
     line-height: 37.94px;
     text-align: center;
-    color: #6F5A41;
+    color: #6F5A41; 
     }
 
  .R{
@@ -220,19 +219,19 @@ text-align: center;
 
 @media (width:360px) {
     .media-raaq{
-   font-size: 13px ;
+   font-size: 13px ;     
     }
     .tet h3{
         font-size: 19px;
     }
-
+    
 }
 @media  (width:320px) {
     .addres-1{
-        font-size: 15px;
-    }
-
-
+        font-size: 15px;        
+    } 
+    
+    
     .media-raaq{
         font-size: 12px;
     }
@@ -248,10 +247,10 @@ text-align: center;
     }
     .raaq-div{
         font-size: 10px;
-
+        
     }
     .sss p {
-
+        
          font-size: 10px;
     }
 }
@@ -261,10 +260,25 @@ text-align: center;
         padding: 30px;
     }
     .sss p{
-      font-size: 40px;
+      font-size: 40px;  
       padding: 50px;
     }
-
+    .label-3{
+        font-size: 30px;
+    }
+    label{
+        font-size:30px;
+    }
+    span{
+        font-size: 15px;
+    }
+    .addres-2{
+        font-size: 25px;
+    }
+    .address-3{
+        font-size: 25px;
+    }
+    
 }
 @media (width:912px) {
     .raaq-div{
@@ -272,325 +286,38 @@ text-align: center;
         padding: 30px;
     }
     .sss p{
-        font-size: 40px;
+        font-size: 40px;  
         padding: 50px;
       }
 }
 /* madia raaq end */
-/* start */
- @media (width:820px) {
-   .label-3{
-    font-size: 22px ;
-}
-label{
-    font-size: 22px;
-}
-.raaq-div{
-    width: 100%;
-    padding: 30px;
-}
-.sss p{
-    font-size: 40px;
-    padding: 50px;
-  }
-
-}
- @media (max-width:900px) {
-    .label-3 {
-        font-size: 20px;
-    }
-    label{
-        font-size:20px ;
-    }
-}
- @media (max-width:775px) {
-    .label-3 {
-        font-size: 22px;
-    }
-    label{
-        font-size:22px ;
-    }
-    .design-input{
-        border: solid 1px ;
-        width: 15px;
-        height: 15px;
-        margin-left: 3px;
-        margin-top: 13px;
-        box-shadow: 0 0 0 1px #bbbcbe;
-    }
-}
- @media (max-width:620px) {
-    .label-3 {
-        font-size: 10px;
-    }
-    label{
-        font-size:10px ;
-    }
-}
- @media (max-width:468px) {
-    .label-3 {
-        font-size: 10px;
-        line-height: 50px;
-    }
-    label{
-        font-size:15px ;
-    }
-    .design-input{
-        border: solid 1px ;
-        width: 15px;
-        height: 15px;
-        margin-left: 1px;
-        margin-top: 15px;
-        box-shadow: 0 0 0 1px #bbbcbe;
-    }
-}
-
- @media (width:600px) {
-    .label-3 {
-        font-size: 10px;
-    }
-    label{
-        font-size:10px ;
-    }
-}
- @media (width:440px) {
-    .label-3 {
-        font-size: 7px;
-    }
-    label{
-        font-size:7px ;
-    }
-}
- @media (width:300px) {
-    .label-3 {
-        font-size: 8px;
-    }
-    label{
-        font-size:6px ;
-    }
-}
- @media (width:500px) {
-    .label-3 {
-        font-size: 10px;
-    }
-    label{
-        font-size: 10px;
-    }
-}
- @media (width:880px) {
-    .label-3 {
-        font-size: 10px;
-    }
-    label{
-        font-size: 10px;
-    }
-}
- @media (width:400px) {
-    .label-3 {
-        font-size: 7px;
-    }
-    label{
-        font-size: 7px;
-    }
-}
 @media  (width:320px) {
-    label{
-        font-size: 12px;
-    }
+   
     .tetal-helthey{
         font-size:12px;
-    }
-    .label-3{
-        font-size: 8px;
-        font-weight: 100;
-        line-height: 20px;
-
-    }
-    .design-input{
-        border: solid 1px ;
-        width: 10px;
-        height: 10px;
-        margin-left: 1px;
-        margin-top: 13px;
-        box-shadow: 0 0 0 1px #bbbcbe;
-
-
-    }
-
+    }   
 }
 @media (width:375px) {
-    .label-3{
-        font-size:8px;
-    }
-    label{
-        font-size:8px;
-    }
+    
     .N{
         font-size:40px;
-    }
-    .design-input{
-        border: solid 1px ;
-        width: 15px;
-        height: 15px;
-        margin-left: 9px;
-        margin-top: 13px;
-        box-shadow: 0 0 0 2px #bbbcbe;
-
-    }
-
-
-}
-@media (width:1024px) {
-    .label-3{
-        font-size:30px;
-        margin-top: 30px;
-    }
-    label{
-        font-size:30px;
-        margin-top: 30px;
-
-
-    }
-    .design-input{
-        border: solid 1px ;
-        width: 20px;
-        height: 20px;
-        margin-left: 10px;
-        margin-top: 40px;
-        box-shadow: 0 0 0 2px #bbbcbe;
-
-    }
-}
-@media (width:1280px) {
-    .label-3{
-        font-size:30px;
-        margin-top: 30px;
-    }
-    label{
-        font-size:30px;
-        margin-top: 30px;
-
-
-    }
-    .design-input{
-        border: solid 1px ;
-        width: 20px;
-        height: 20px;
-        margin-left: 10px;
-        margin-top: 40px;
-        box-shadow: 0 0 0 2px #bbbcbe;
-
-    }
-}
-@media (width:912px) {
-    .label-3{
-        font-size:26px;
-        margin-top: 30px;
-    }
-    label{
-        font-size:26px;
-        margin-top: 30px;
-
-    }
-    .design-input{
-        border: solid 1px ;
-        width: 20px;
-        height: 20px;
-        margin-left: 10px;
-        margin-top: 40px;
-        box-shadow: 0 0 0 2px #bbbcbe;
-
-    }
-}
-@media (width:412px) {
-    .label-3{
-        font-size: 10.5px;
-        font-weight: 300px;
-        line-height: 45px;
-    }
-    label{
-        font-size: 12px;
-
-    }
-    .design-input{
-        border: solid 1px ;
-        width: 13px;
-        height: 13px;
-        margin-left: 3px;
-        margin-top: 13px;
-        box-shadow: 0 0 0 1px #bbbcbe;
-    }
-}
-
- @media (width:414px) {
-    .design-input{
-        border: solid 1px ;
-        width: 10px;
-        height: 10px;
-        margin-left: 1px;
-        margin-top: 10px;
-        box-shadow: 0 0 0 1px #bbbcbe;
-
-
-    }
-    .label-3{
-        font-size: 20px;
-    }
-    label{
-        font-size: 12px;
-    }
-
-}
- @media (width:768px) {
-    .design-input{
-        border: solid 1px ;
-        width: 15px;
-        height: 15px;
-        margin-left: 10px;
-        margin-top: 15px;
-        box-shadow: 0 0 0 1px #bbbcbe;
-
-    }
-    .label-3{
-        font-size: 22px;
-    }
-    label{
-        font-size: 20px;
-
-    }
-}
+    }  
+} 
 @media (max-width:280px) {
-
+    
     .tet h3{
         font-size: 16px;
     }
 }
-@media (max-width:360px) {
-    .label-3{
-        font-size: 9.5px;
-    }
-    label{
-        font-size: 10px;
-    }
-}
+
 /* end */
-
-
-
 @media (width:320px) {
     .imgg{
-        margin-top: 40px;
-
+        margin-top: 40px;    
     }
     .pp{
         font-size: 10px;
-    }
-    .label-3{
-        font-size: 8.5px;
-    }
-    label{
-        font-size: 8.5px;
-    }
+    } 
 }
 
 @media (min-width:357px) {
@@ -604,7 +331,7 @@ label{
 @media (width:280px) {
     .imgg{
         margin-top: 40px;
-
+        
     }
     .pp{
         font-size: 10px;
@@ -618,6 +345,21 @@ label{
         font-size: 25px;
         margin: 0px;
     }
+    .label-3{
+        font-size: 35px;
+    }
+    label{
+        font-size: 35px;
+    }
+    span{
+        font-size: 15px;
+    }
+    .addres-2{
+        font-size: 25px;
+    }
+    .address-3{
+        font-size: 25px;
+    }
 }
 @media (width:1024px) {
     .imgg{
@@ -625,8 +367,24 @@ label{
     }
     .pp{
         font-size: 30px;
-
+        
     }
+    .label-3{
+        font-size: 40px;
+    }
+    label{
+        font-size:40px;
+    }
+    span{
+        font-size: 15px;
+    }
+    .addres-2{
+        font-size: 25px;
+    }
+    .address-3{
+        font-size: 25px;
+    }
+    
 }
 @media (width:912px) {
     .imgg{
@@ -634,7 +392,16 @@ label{
     }
     .pp{
         font-size: 25px;
-
+        
+    }
+    span{
+        font-size: 15px;
+    }
+    .addres-2{
+        font-size: 25px;
+    }
+    .address-3{
+        font-size: 25px;
     }
 }
 @media (width:820px) {
@@ -643,7 +410,7 @@ label{
     }
     .pp{
         font-size: 25px;
-
+        
     }
 }
 @media (width:768px) {
@@ -652,149 +419,170 @@ label{
     }
     .pp{
         font-size: 25px;
-
+        
     }
-
+    label{
+        font-size: 30px;
+    }
+    
 }
 @media(width:320px) {
     .pr{
         font-size:15px;
-      }
+      } 
       .img{
         margin-top: 40px;
-      }
+      } 
     }
     @media(width:390px) {
      .pr{
         font-size:10px;
-      }
+      } 
       .img{
         margin-top: 40px;
-      }
+      } 
     }
     @media (min-width:414px) {
      .pr{
         font-size:20px;
-      }
+      } 
       .img{
         margin-top: 40px;
-      }
-
+      } 
+      
     }
     @media (min-width:375px) {
      .pr{
         font-size:20px;
-      }
+      } 
       .img{
         margin-top: 40px;
-      }
-
+      } 
+     
     }
     @media(width:412px) {
     .pr{
         font-size:17px;
-      }
+      } 
       .img{
         margin-top: 40px;
+      } 
+      .label-3{
+        font-size: 35px;
+      }
+      label{
+        font-size: 35px;
       }
     }
     @media(width:360px) {
     .pr{
         font-size:15px;
-      }
+      } 
       .img{
         margin-top: 40px;
-      }
+      } 
     }
-
+    
     @media(width:820px) {
     .pr{
         font-size:20px;
-      }
+      } 
       .img{
         margin-top: 40px;
-      }
+      } 
+      .label-3{
+        font-size: 30px;
+    }
+    label{
+        font-size:30px;
+    }
+    span{
+        font-size: 15px;
+    }
+    .addres-2{
+        font-size: 25px;
+    }
+    .address-3{
+        font-size: 25px;
+    }
+    
     }
     @media(width:375px)  {
         .pr{
         font-size:10px;
-      }
+      } 
       .img{
         margin-top:40px;
-      }
-
+      } 
+    
     }
     @media(width:540px) {
     .pr{
         font-size:18px;
-      }
+      } 
       .img{
         margin-top: 40px;
-      }
-      .label-3{
-        font-size: 13px;
-      }
+      } 
     }
     @media(width:930px) {
     .pr{
         font-size:15px;
-      }
+      } 
       .img{
         margin-top: 40px;
-      }
-
+      } 
+      
     }
      @media(width:414px) {
     .pr{
         font-size:20px;
-      }
+      } 
       .img{
         margin-top: 40px;
+      } 
+      label{
+        font-size: 40px;
       }
-    }
+     
+    
+    } 
     @media(width:280px) {
     .pr{
         font-size:10px;
-      }
+      } 
       .img{
         margin-top: 45px;
-      }
+      } 
       span{
         font-size: 10px;
       }
     .ee{
         font-size: 13px;
      }
-     .label-3{
-        font-size: 6px;
-     }
-     label{
-        font-size: 10px;
-     }
-     .design-input{
-        border: solid 1px ;
-        width: 10px;
-        height: 10px;
-        margin-left: 5px;
-        margin-top: 18px;
-        box-shadow: 0 0 0 1px #bbbcbe;
-
-    }
+     
     }
     @media(width:912px) {
     .pr{
         font-size:30px;
-      }
+      } 
       .img{
         margin-top: 37px;
-      }
+      } 
+      .label-3{
+        font-size: 35px;
+        
     }
+    label{
+        font-size:35px;
+    }
+    
+    }
+    
 
 
 
-
-
-
+        
+    
 
 
 

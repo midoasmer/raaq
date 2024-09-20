@@ -15,12 +15,13 @@
             <p class="tatel">الرجاء الاختيار من الحالات الآتية <span> (يمكن اختيار اكتر من واحد )</span></p>
 
             @foreach($questions as $question)
-                <div class=" ">
-                    <label class="" for="{{$question->id}}"> {{$question->question}} </label>
-                    <input class="form-check-input design-input  " onclick="restNo()" type="checkbox"
+                <div class="d-flex justify-content-end pt-4">
+                    <label class="mx-3" for="{{$question->id}}"> {{$question->question}} </label>
+                    <input class="form-check-input design-input p-2" onclick="restNo()" type="checkbox"
                            id="{{$question->id}}" value="{{$question->id}}" name="questions[]">
                 </div>
             @endforeach
+
             @if($page->page_number == 1)
                 <div class=" ">
                     <label class="" for="-1"> لاشئ مما سبق </label>

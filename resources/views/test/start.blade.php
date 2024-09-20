@@ -42,7 +42,7 @@
                 </div>
                 <div class="d-grid gap-2 ps-2">
                     <h6>العمر</h6>
-                    <input type="number" min="15" max="80" name="age" class="form-control age text-center  rounded-4" required  id="floatingInputDisabled" placeholder="قم بادخال عمرك (من 15 الى 80 عام ) " >
+                    <input type="number" min="8" max="80" name="age" class="form-control age text-center  rounded-4" required  id="floatingInputDisabled" placeholder="قم بادخال عمرك (من 8 الى 80 عام ) " >
                 </div>
                 <div class="d-grid gap-2 ps-2">
                     <h6>الاسم</h6>
