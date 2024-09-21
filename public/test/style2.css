@@ -87,6 +87,20 @@ gap: 0px !important;
 opacity: 0px !important;
 
 }
+.button{
+    color: #6F5A41;
+    font-family: Noto Kufi Arabic;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 37.92px;
+    text-align: center;
+    color: #D1D5DB;
+
+}
+
 button{
-    border: #6F5A41 solid !important;
+    border: #6F5A41 solid;
+    background-color: #6F5A41;
+    color: #D1D5DB;
+    font-size: 20px;
 }

@@ -1,22 +1,37 @@
 @extends('/test/layouts/app')
 @section('style')
-    <link rel="stylesheet" href="{{asset('/test/style2.css')}}">
+    <link rel="stylesheet" href="{{asset('/test/style.css')}}">
 @endsection
 @section('content')
-    <div class="row  text-center n ">
-        <div class="col-lg-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 col-5    bg-light  m-auto text-end border rounded-4 ">
-            <div class="  ">
-                <h1 class="tetal mt-5 ">تم الانتهاء من الاختبار </h1>
-                <div class="d-grid gap-2 ps-2   mb-5 ">
-                    <button class="rounded-4  mt-3 e" data-toggle="modal" data-target="#modelModal"> التواصل مع المعالج</button>
-                    <a href="{{ url($link) }}" class="rounded-4  mt-3 A" download >
-                        تحميل نتيجة الاختبار
-                    </a>
-                </div>
-            </div>
 
+
+    <header class="d-flex align-items-center justify-content-center text-end  ">
+        <div class="header-content bg-white  mt-5 mb-5 rounded-5 p-4 ">
+            <h3 class="address mt-5 ">تم الانتهاء من الاختبار </h3>
+
+            <div class="d-grid gap-2 ps-2   mb-5 ">
+                <button class="rounded-4  mt-3 e" data-toggle="modal" data-target="#modelModal"> التواصل مع المعالج</button>
+                <a href="{{ url($link) }}" class="rounded-4 text-center mt-3 button-end" download >
+                    تحميل نتيجة الاختبار
+                </a>
+            </div>
         </div>
-    </div>
+    </header>
+
+{{--    <div class="row  text-center n ">--}}
+{{--        <div class="col-lg-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5 col-5    bg-light  m-auto text-end border rounded-4 ">--}}
+{{--            <div class="  ">--}}
+{{--                <h1 class="tetal mt-5 ">تم الانتهاء من الاختبار </h1>--}}
+{{--                <div class="d-grid gap-2 ps-2   mb-5 ">--}}
+{{--                    <button class="rounded-4  mt-3 e" data-toggle="modal" data-target="#modelModal"> التواصل مع المعالج</button>--}}
+{{--                    <a href="{{ url($link) }}" class="rounded-4  mt-3 e" download >--}}
+{{--                        تحميل نتيجة الاختبار--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--        </div>--}}
+{{--    </div>--}}
 
 
     <!-- Modal -->
