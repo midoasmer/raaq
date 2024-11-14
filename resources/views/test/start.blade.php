@@ -23,7 +23,7 @@
                     <label class="N" for="2">ذكر</label>
                     <input class="form-check-input design-input"   type="radio" id="2" value="male" name="gender" required>
                 </div>
-                <h6 class="mt-4">الحاله الاجتماعيه</h6>
+                <h6 class="mt-4">الحالة الاجتماعية</h6>
                 <div>
                     <label class="N" for="3">متزوج</label>
                     <input class="form-check-input design-input"  type="radio" value="married" name="status" id="3" required>
@@ -34,6 +34,10 @@
                 </div>
                 <div>
                     <label class="N" for="5">مطلق</label>
+                    <input  class="form-check-input design-input" type="radio" value="divorced" name="status" id="5" required>
+                </div>
+                <div>
+                    <label class="N" for="5">خاطب</label>
                     <input  class="form-check-input design-input" type="radio" value="divorced" name="status" id="5" required>
                 </div>
                 <div>
